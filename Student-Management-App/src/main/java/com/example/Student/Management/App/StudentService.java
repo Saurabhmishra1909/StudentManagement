@@ -16,4 +16,17 @@ public class StudentService {
         studentRepository.addStudent(student);
         return "Added Successfully";
     }
+
+    public Teacher getTeacher(int id){
+        return studentRepository.getTeacher(id);
+    }
+
+    public Teacher getTeacherName(String name){
+        return studentRepository.getTeacherName(name);
+    }
+
+    public String addTeacher(Teacher teacher){
+        studentRepository.addTeacher(teacher);
+        return "Teacher Added";
+    }
 }
