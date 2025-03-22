@@ -4,6 +4,8 @@ package com.example.Student.Management.App;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     @Autowired
@@ -28,5 +30,20 @@ public class StudentService {
     public String addTeacher(Teacher teacher){
         studentRepository.addTeacher(teacher);
         return "Teacher Added";
+    }
+    public List<String> getAllStudents() {
+        return studentRepository.getAllStudents();
+    }
+
+    public String deleteTeacher(String name){
+        return studentRepository.deleteTeacher(name);
+    }
+
+    public String addStudentTeacher(Integer teacherId, Integer studentId) {
+        return studentRepository.addStudentTeacher(teacherId,studentId);
+    }
+
+    public List<String> putStudentTeacher(Integer teacherId) {
+        return studentRepository.putStudentTeacher(teacherId);
     }
 }
